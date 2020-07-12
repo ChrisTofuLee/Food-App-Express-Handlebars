@@ -18,8 +18,50 @@
 
     <title>Express Food App</title>
   </head>
-  <body>
-    <h1>Hello, world!</h1>
+  <body class="bg-dark">
+    <div class="container bg-light">
+      <div class="jumbotron">
+        <h1 class="display-4">Express Food</h1>
+        <hr class="my-4" />
+        <p class="lead">
+          Simply enter the food's you want to eat and update it by clicking the
+          devour button
+        </p>
+      </div>
+      <section>
+        <div class="row">
+          <div class="col-6">
+            <h2 class="text-center mb-2">What would you like to eat?</h2>
+          </div>
+          <div class="col-6">
+            <form class="form-inline mb-2">
+              <div class="form-group mb-2">
+                <label for="foodInput" class="mx-2">
+                  Submit delicious food
+                </label>
+                <input
+                  type="text"
+                  class="form-control mx-2"
+                  id="foodInput"
+                  placeholder="eg. Triple decker burger"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-success mb-2">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <img src="./assets/food.png" alt="food banner" class="img-fluid" />
+        </div>
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-6"></div>
+        </div>
+      </section>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
