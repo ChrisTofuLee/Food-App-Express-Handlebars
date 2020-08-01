@@ -1,5 +1,6 @@
 const express = require("express");
 const food = require("../models/food");
+
 const router = express.Router();
 
 router.get("/api/foods", (req, res) => {

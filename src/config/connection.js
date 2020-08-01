@@ -5,7 +5,8 @@ const dpOptions = {
     port: 3306,
     user: "root",
     password: "Password",
-    database: "foods_db"
+    database: "foods_db",
+    multipleStatements: true
 }
 
 const connection = mysql.createConnection(dpOptions);

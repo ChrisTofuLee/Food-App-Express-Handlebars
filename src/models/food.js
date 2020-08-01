@@ -1,10 +1,15 @@
 const orm = require("../config/orm");
 
-const meal = (cb) => {
-    orm.getFoods(cb)
+const meal = (cbT) => {
+    orm.getFoods(cbT)
 }
+const devouredFoods = (cbF) => {
+    orm.getDevouredFoods(cbF)
+}
+
 const food = {
     meal,
+    devouredFoods,
 };
 
 module.exports = food;

@@ -1,11 +1,21 @@
 const express = require("express");
-const path = require("path")
+const food = require("../models/food");
+const { devouredFoods } = require("../models/food");
 
-const router = express.Router(); 
+const router = express.Router();
+
 router.get("/", function (req, res) {
-    // const filePath = path.join(__dirname, "../public/index.html")
-    // res.sendFile(filePath)
-    res.render("food", {})
+  // const filePath = path.join(__dirname, "../public/index.html")
+  // res.sendFile(filePath)
+  const cbT = (foods) => {
+    const cbF = (devouredFoods) => {
+res.render("food", { foods, devouredFoods });
+    }
+    food.devouredFoods(cbF);
+    
+  };
+  
+  food.meal(cbT);
 });
 // router.get("/route2", function (req, res) {});
 
