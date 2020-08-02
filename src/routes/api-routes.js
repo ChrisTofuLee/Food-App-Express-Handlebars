@@ -11,7 +11,12 @@ router.get("/api/foods", (req, res) => {
 });
 
 router.post("/api/foods", (req, res) => {
-  res.json({ message: "post foods" });
+  const payload = req.body;
+  console.log(payload)
+  const cb = (result) => {
+    res.json(result)
+  }
+  food.newFood(payload, cb)
 });
 
 router.put("/api/foods/:id", (req, res) => {

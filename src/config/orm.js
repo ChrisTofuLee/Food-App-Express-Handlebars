@@ -5,7 +5,7 @@ const getFoods = (cbT, ) => {
 
     const onQuery = (err, rows) => {
         if (err) throw err;
-        console.log(rows)
+        
         cbT(rows)
     };
 
@@ -16,16 +16,28 @@ const getDevouredFoods = (cbF) => {
 
     const onQueryFalse = (err, rows) => {
         if (err) throw err;
-        console.log(rows)
+        
         cbF(rows)
     };
 
     connection.query(queryFalse, onQueryFalse);
 }
 
+const insertNewFood = (food, cb) => {
+//backticks might be required here as "name" is a protected field in SQL
+    const query = `INSERT INTO foods (name) VALUES ("${food}")`;
+
+    const onQuery = (err, rows) => {
+        if (err) throw err;
+        cb(rows)
+    }
+    connection.query(query, onQuery)
+}
+
 const orm = {
     getFoods,
     getDevouredFoods,
+    insertNewFood,
 }
 
 module.exports = orm;

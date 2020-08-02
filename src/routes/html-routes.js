@@ -4,7 +4,7 @@ const { devouredFoods } = require("../models/food");
 
 const router = express.Router();
 
-router.get("/", function (req, res) {
+router.get("/view", function (req, res) {
   // const filePath = path.join(__dirname, "../public/index.html")
   // res.sendFile(filePath)
   const cbT = (foods) => {
