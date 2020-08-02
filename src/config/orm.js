@@ -1,5 +1,6 @@
 const connection = require("./connection");
 
+//function that collects the information necessary from the foods table from the foods_db to populate with the handlebars
 const getFoods = (cbT, ) => {
     const query = "SELECT * FROM foods WHERE devoured=0";
 
@@ -11,6 +12,8 @@ const getFoods = (cbT, ) => {
 
     connection.query(query, onQuery);
 }
+
+//second function that is run straight after to make sure that the 'devoured' list is loaded up in the right section of the page
 const getDevouredFoods = (cbF) => {
     const queryFalse = "SELECT * FROM foods WHERE devoured=1";
 
@@ -23,6 +26,7 @@ const getDevouredFoods = (cbF) => {
     connection.query(queryFalse, onQueryFalse);
 }
 
+//function to add extra foods that have been submited by the user into the table then runs the callback function which renders the homepage again with the new submited food showing under the yummy foods list
 const insertNewFood = (food, cb) => {
 //backticks might be required here as "name" is a protected field in SQL
     const query = `INSERT INTO foods (name) VALUES ("${food}")`;
@@ -34,6 +38,7 @@ const insertNewFood = (food, cb) => {
     connection.query(query, onQuery)
 }
 
+//function to update the foods table and the renders the page again to show the food moved from yummy foods to devoured
 const update = (id, cb) => {
     const query = `UPDATE foods SET devoured=true WHERE id=${id}`;
 
