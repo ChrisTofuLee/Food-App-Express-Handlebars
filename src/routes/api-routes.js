@@ -14,14 +14,18 @@ router.post("/api/foods", (req, res) => {
   const payload = req.body;
   console.log(payload)
   const cb = (result) => {
-    res.json(result)
+    res.redirect('/view');
   }
   food.newFood(payload, cb)
 });
 
-router.put("/api/foods/:id", (req, res) => {
+router.post("/api/foods/:id", (req, res) => {
   const { id } = req.params;
-  res.json({ message: `put foods - ${id}` });
+  const cb = () => {
+    res.redirect('/view');
+  }
+  
+  food.devour(id, cb)
 });
 
 module.exports = router;

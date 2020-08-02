@@ -9,11 +9,15 @@ const devouredFoods = (cbF) => {
 const newFood = ({ food }, cb) => {
   orm.insertNewFood(food, cb);
 };
+const devour = (id, cb) => {
+    orm.update(id, cb)
+}
 
 const food = {
   meal,
   devouredFoods,
   newFood,
+  devour,
 };
 
 module.exports = food;

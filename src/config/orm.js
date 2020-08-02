@@ -34,10 +34,22 @@ const insertNewFood = (food, cb) => {
     connection.query(query, onQuery)
 }
 
+const update = (id, cb) => {
+    const query = `UPDATE foods SET devoured=true WHERE id=${id}`;
+
+const onQuery = (err, rows) => {
+if (err) throw err;
+cb(rows)
+};
+
+connection.query(query, onQuery);
+}
+
 const orm = {
     getFoods,
     getDevouredFoods,
     insertNewFood,
+    update
 }
 
 module.exports = orm;
