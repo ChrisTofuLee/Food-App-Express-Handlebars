@@ -4,7 +4,7 @@ ThisFood App allows users to enter foods that they fancy adding to their existin
 
 ## Instillation
 
-Simply go to live site [here](http) to see the application in action. If running through a local host, ensure to run npm install to install the necessary node modules. Once installed, simply run npm start to start a localhost. The app uses SQL as a database to allow users to store their lists.
+Simply go to live site [here](https://quiet-temple-50760.herokuapp.com/view) to see the application in action. If running through a local host, ensure to run npm install to install the necessary node modules. Once installed, simply run npm start to start a localhost. The app uses SQL as a database to allow users to store their lists.
 
 ## Usage
 
