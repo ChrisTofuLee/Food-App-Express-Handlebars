@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <title>Express Food App</title>
+  </head>
+  <body class="bg-dark">
+    <div class="container bg-light">
+      <div class="jumbotron">
+        <h1 class="display-4">Express Food</h1>
+        <hr class="my-4" />
+        <p class="lead">
+          Simply enter the food's you want to eat and update it by clicking the
+          devour button
+        </p>
+      </div>
+      <section>
+        <div class="row">
+          <div class="col-6">
+            <h2 class="text-center mb-2">What would you like to eat?</h2>
+          </div>
+          <div class="col-6">
+            <form class="form-inline mb-2">
+              <div class="form-group mb-2">
+                <label for="foodInput" class="mx-2">
+                  Submit delicious food
+                </label>
+                <input
+                  type="text"
+                  class="form-control mx-2"
+                  id="foodInput"
+                  placeholder="eg. Triple decker burger"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-success mb-2">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <img src="food.png" alt="food banner" class="img-fluid" />
+      <section>
+        <div class="row">
+          <div class="col-6 text-center">
+            <h3>Yummy Foods</h3>
+            <div class="card my-2 mx-auto" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title mb-3">{name}</h5>
+                <button href="#" class="btn btn-danger" id={id}>Devour</button>
+              </div>
+            </div>
+            <div class="card my-2 mx-auto" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title mb-3">{name}</h5>
+                <button href="#" class="btn btn-danger" id={id}>Devour</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 text-center"><h3>Devoured Foods</h3>
+            <div class="card my-2 mx-auto bg-secondary" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title mb-4 text-white">{name}</h5>
+                  <h6 class="card-subtitle mb-3 text-warning font-italic">Devoured</h6>
+                </div></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  </body>
+</html>

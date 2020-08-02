@@ -1,0 +1,47 @@
+<div class="container bg-light">
+  <div class="jumbotron">
+    <h1 class="display-4">Express Food</h1>
+    <hr class="my-4" />
+    <p class="lead">
+      Simply enter the food's you want to eat and update it by clicking the
+      devour button
+    </p>
+  </div>
+  <section>
+    <div class="row">
+      <div class="col-6">
+        <h2 class="text-center mb-2">What would you like to eat?</h2>
+      </div>
+      <div class="col-6">
+        <form class="form-inline mb-2" action="/api/foods" method="POST">
+          <div class="form-group mb-2">
+            <label for="foodInput" class="mx-2">
+              Submit delicious food
+            </label>
+            <input type="text" class="form-control mx-2" id="foodInput" placeholder="eg. Triple decker burger" name="food"
+              required />
+          </div>
+          <button type="submit" class="btn btn-success mb-2">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <img src="food.png" alt="food banner" class="img-fluid" />
+  <section>
+    <div class="row">
+      <div class="col-6 text-center">
+        <h3>Yummy Foods</h3>
+        {{#each foods}}
+        {{> food/meal devoured=0}}
+        {{/each}}
+      </div>
+      <div class="col-6 text-center">
+        <h3>Devoured Foods</h3>
+        {{#each devouredFoods}}
+        {{> food/devoured devoured=1}}
+        {{/each}}
+      </div>
+  </section>
+</div>
